@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Js In Progress</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #093939;
+            color: #ffffff;
+        }
+
+        .spiner {
+            height: 90px;
+            width: 90px;
+            background-color: #093939;
+            border: 5px solid #ffffff;
+            border-radius: 50%;
+            border-top: 5px solid #093939;
+            animation: spiner 0.7s linear infinite;
+        }
+
+        @keyframes spiner {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spiner"></div>
+    <div class="button">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
