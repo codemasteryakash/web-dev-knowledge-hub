@@ -4,116 +4,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Image Gallery</title>
+    <title>Photos Layout</title>
+
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            background-color: #fff;
-            color: #000;
-            font-family:'Segoe UI';
+            font-family: "Segoe UI", sans-serif;
+            background: #f5f5f5;
         }
+
+        /* TOP BAR */
         header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #4285f4;  /* Google blue */
+        }
+
+        .search-box {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: #4285f4;
+            box-shadow: 0 0 3px #4285f4;
+        }
+
+        /* LAYOUT */
         .layout {
             display: flex;
-            height: 100vh;
+            min-height: 100vh;
         }
+
+        /* SIDEBAR */
         aside {
-            width: 20%;
-            background-color: #000;
-            color: #fff;
-            height: 100vh;
-            border: 1px solid #fff;
-            box-shadow: 0 0 16px blue;
-            border-radius: 8px;
-            margin: 10px;
-            padding: 10px;
+            width: 230px;
+            background: white;
+            padding: 20px;
+            border-right: 1px solid #ddd;
         }
-        nav ul li {
+
+        aside ul li {
             list-style: none;
-            padding: 10px;
-            font-size: 1.2rem;
+            padding: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            text-align: center;
-            border-bottom: 1px solid #fff;
-            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            transition: 0.2s;
         }
-        nav ul li:hover {
-            transform: scale(1.2);
-            transform: skewX(-10deg);
+
+        aside ul li:hover {
+            background: #f0f0f0;
+            transform: translateX(5px);
         }
+
+        /* PHOTO GRID */
         main {
             flex: 1;
-            background-color: brown;
-            margin: 10px;
+            padding: 20px;
             display: grid;
-            grid-template-columns: repeat(5, 16px);
-            padding: 10px;
-            border-radius: 8px;
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
         }
-        .box {
-            height: 100px;
-            width: 100px;
-            border-radius: 8px;
-            background-color: #000;
-            transition: all 0.3s ease;
+
+        .photo {
+            height: 180px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
         }
-        .box2 {
-            height: 100px;
-            width: 100px;
-            border-radius: 8px;
-            background-color: #000;
-            transition: all 0.3s ease;
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .box:hover,.box2:hover {
-            transform: scale(1.2);
+
+        .photo:hover {
+            transform: scale(1.04);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+            aside {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Photo Gallery</h1>
-    </header>
-<div class="layout">
-    <aside>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>Family</li>
-                <li>Photos</li>
-                <li>Friends</li>
-                <li>Functions</li>
-            </ul>
-        </nav>
-    </aside>
 
-    <main>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </main>
-</div>
+    <header>
+        <div class="logo">Photos</div>
+        <div class="search-box">
+            <input type="text" placeholder="Search your photos...">
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside>
+            <ul>
+                <li>All Photos</li>
+                <li>Albums</li>
+                <li>Favorites</li>
+                <li>People</li>
+                <li>Trash</li>
+            </ul>
+        </aside>
+
+        <!-- Photo Grid -->
+        <main>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=1"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=2"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=3"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=4"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=5"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=6"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=7"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=8"></div>
+            <div class="photo"><img src="https://picsum.photos/300/200?random=9"></div>
+        </main>
+
+    </div>
+
 </body>
 
 </html>
