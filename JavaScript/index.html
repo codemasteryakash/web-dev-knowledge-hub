@@ -19,6 +19,7 @@
             height: 100vh;
             background-color: #093939;
             color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .spiner {
@@ -30,7 +31,7 @@
             border-top: 5px solid #093939;
         }
 
-        .spiner .active {
+        .spiner.active {
             animation: spiner 0.7s linear infinite;
 
         }
@@ -75,12 +76,17 @@
             cursor: pointer;
             color: black;
             transition: all 0.3s ease;
-            margin-top: 50px;
+            margin-top: 10px;
         }
 
         button:hover {
             box-shadow: 0 5px 16px #ffffff;
             transform: scale(0.95);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: larger;
         }
     </style>
 </head>
@@ -88,6 +94,7 @@
 <body>
     <div class="container">
         <div class="spiner active"></div>
+        <p id="result">Loading...</p>
         <div class="button">
             <button id="startBtn">Start</button>
             <button id="stopBtn" style="background-color: red;">Stop</button>
@@ -96,11 +103,19 @@
     <script>
         const startBtn = document.getElementById("startBtn");
         const stopBtn = document.getElementById("stopBtn");
+        const spinner = document.querySelector(".spiner");
 
+        // Start button → animation start
         startBtn.addEventListener("click", () => {
-            console.log("Btn Was Clicked")
-            document.body.classList.add(".active")
-        })
+            spinner.classList.add("active");
+        });
+
+
+        // Stop button → animation stop
+        stopBtn.addEventListener("click", () => {
+            spinner.classList.remove("active");
+        });
+       
     </script>
 </body>
 

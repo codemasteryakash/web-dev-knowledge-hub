@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JS In Progress</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .layout {
+            margin: auto;
+            height: 100vh;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 18px;
+            font-size: 18px;
+            font-weight: 600;
+            background: #0f172a;
+            color: aqua;
+            border: 1px solid #aaa;
+            border-left: 5px solid aqua;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: aqua;
+            color: #0f172a;
+        }
+
+        .popup {
+            display: none;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 18px;
+            border: 1px solid #fff;
+            box-shadow: 0 0 20px #00ffffa8;
+            animation: pop 0.4s ease;
+            text-align: center;
+            width: 270px;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup p {
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .popup-02 {
+            display: none;
+            border: 2px solid #fff;
+            padding: 16px;
+            border-radius: 16px;
+            color: yellow;
+            background: rgba(15, 23, 42, 0.8);
+            text-align: center;
+            opacity: 0;
+            animation: fade 0.6s forwards;
+            width: 300px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <div class="popup" id="popup">
+            <p>Do you want to go back?</p>
+            <div class="btn">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+
+        <div class="popup-02" id="popup2">
+            <p>You know what?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos atque modi vero!</p>
+        </div>
+<p>You know what ? To day i learn how to work popup btn if you love to know click the show btn .</p>
+        <button id="show">Show</button>
+    </div>
+
+    <script>
+        const show = document.querySelector("#show");
+        const popup = document.querySelector("#popup");
+        const yesBtn = document.querySelector("#yesBtn");
+        const noBtn = document.querySelector("#noBtn");
+        const popup2 = document.querySelector("#popup2");
+
+        show.onclick = () => {
+            popup.style.display = "block";
+            show.style.display = "none";
+        };
+
+        yesBtn.onclick = () => {
+            popup.style.display = "none";
+            show.style.display = "block";
+            popup2.style.display = "none";
+        };
+
+        noBtn.onclick = () => {
+            popup.style.display = "none";
+            popup2.style.display = "block";
+        };
+    </script>
+
+</body>
+
+</html>
