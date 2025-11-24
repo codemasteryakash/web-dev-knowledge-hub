@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page | by codemasteryakash</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("/blue_moon_sky_white_leaves_trees_birds_anime_background_hd_anime_background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #dddd;
+            font-family: 'segoe ui';
+
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+
+        form {
+            border-radius: 16px;
+            box-shadow: 0 0 12px #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .userInput {
+            position: relative;
+            /* IMPORTANT FIX */
+            width: 100%;
+        }
+
+        .userInput input {
+            width: 260px;
+            padding: 12px;
+            border: 2px solid #ccc;
+            background-color: transparent;
+            font-size: 1.2rem;
+            outline: none;
+            border-radius: 10px;
+            color: #ddd;
+        }
+
+        .userInput input:focus {
+            border-color: #ddd;
+            box-shadow: 0 0 12px blue;
+        }
+
+        /* LABEL */
+        .userInput label {
+            position: absolute;
+            left: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #093939;
+            padding: 0 6px;
+            color: #ddd;
+            transition: 0.3s ease;
+            pointer-events: none;
+        }
+
+        /* FLOATING EFFECT */
+        .userInput input:focus+label,
+        .userInput input:not(:placeholder-shown)+label {
+            top: 2px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        form a {
+            font-size: 1.2rem;
+            color: royalblue;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 12px 18px;
+            background-color: #093939;
+            border: 2px solid #ccc;
+            font-weight: bold;
+            font-size: large;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px #ccc;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="submit.php">
+
+            <div class="userInput">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="userInput">
+                <input type="password" id="password" name="password" required placeholder=" ">
+                <label for="password">Password</label>
+            </div>
+
+            <a href="#">Forgot Password</a>
+            <button>Login</button>
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Sign Up Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("/blue_moon_sky_white_leaves_trees_birds_anime_background_hd_anime_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .layout {
+            display: flex;
+            padding: 12px;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.3);
+            max-width: 1400px;
+            backdrop-filter: blur(-10px);
+            height: auto;
+            min-height: 80vh;
+        }
+
+        .signupInfo {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .signupInfo h2 {
+            font-size: 3rem;
+            max-width: 100%;
+        }
+
+        .signupInfo p {
+            font-size: 1.3rem;
+            text-align: left;
+        }
+
+        .signupForm {
+            display: flex;
+            /* justify-content: space-around; */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            width: 100%;
+            max-height: 500px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+.userInfo {
+    position: relative;
+    display: block;
+    gap: 10px;
+}
+.userInfo input {
+    padding: 10px;
+    background: transparent;
+
+}
+        .divider {
+            display: flex;
+            background-color: red;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 50px;
+            margin: 20px;
+
+        }
+        .divider .div {
+            gap: 10px;
+            margin: ;
+        }
+
+        .divider .row {
+            margin: 10px;
+        }
+
+
+
+        .divider .text {
+            background-color: blue;
+            padding: 10px;
+            font-weight: bold;
+
+        }
+
+
+
+
+        .socialIcon {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .socialItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .socialIcon a {
+            font-size: 2rem;
+            color: gray;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="signupInfo">
+            <h2>Let's Get Started</h2>
+            <p>Welcome to our websites! We're glad to have you here Our goal is to provide you with the best experience
+                possiable.</p>
+        </div>
+        <div class="signupForm">
+            <form action="#">
+                <h2>Sign Up</h2>
+                <div class="userInfo">
+                    <input type="text" name="name" id="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="userInfo">
+                    <input type="email" name="email" id="email" placeholder=" " required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="userInfo">
+                    <input type="password" name="password" id="password" placeholder=" " required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="userInfo">
+                    <input type="text" name="confirmPassword" id="confirmPassword" placeholder=" " required>
+                    <label for="confirmPassword">Confirm Password</label>
+                </div>
+                <button id="signupBtn">Sign Up</button>
+                <div class="bottomInfo">
+                    <p>Already a member? <a href="#">Sign in</a></p>
+                </div>
+
+            </form>
+
+
+            <div class="socialIcon">
+                <div class="divider">
+                    <div class="div"> <span class="row"></span></div>
+                    <div class="div">
+                        <span class="text">OR</span>
+                    </div>
+                    <div class="div">
+                        <span class="row"></span>
+                    </div>
+                </div>
+
+                <div class="socialItem">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" title="Google"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
