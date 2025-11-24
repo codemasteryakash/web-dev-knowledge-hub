@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Js In Progress</title>
+
     <style>
         * {
             margin: 0;
@@ -22,40 +23,39 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .spiner {
-            height: 90px;
-            width: 90px;
-            background-color: #093939;
-            border: 5px solid #ffffff;
-            border-radius: 50%;
-            border-top: 5px solid #093939;
-        }
-
-        .spiner.active {
-            animation: spiner 0.7s linear infinite;
-
-        }
-
-        @keyframes spiner {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-
-        }
-
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
             box-shadow: 0 0 16px #ffffff;
-            height: 300px;
-            width: 300px;
-            border-radius: 50px;
+            height: 320px;
+            width: 320px;
+            border-radius: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .spiner {
+            height: 90px;
+            width: 90px;
+            border: 5px solid #ffffff;
+            border-radius: 50%;
+            border-top: 5px solid #093939;
+            margin-bottom: 15px;
+        }
+
+        .spiner.active {
+            animation: spiner 0.7s linear infinite;
+        }
+
+        @keyframes spiner {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .button {
@@ -68,15 +68,16 @@
             padding: 12px 15px;
             font-size: larger;
             font-weight: bold;
-            border: 2px solid #093939;
             border-radius: 8px;
-            background-color: transparent;
-            color: white;
             background-color: green;
-            cursor: pointer;
             color: black;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+
+        #stopBtn {
+            background-color: red;
         }
 
         button:hover {
@@ -85,38 +86,43 @@
         }
 
         #result {
-            margin-top: 20px;
-            font-size: larger;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <div class="spiner active"></div>
-        <p id="result">Loading...</p>
+        <div class="spiner"></div>
+
+        <p id="result">Press Start to begin spinning</p>
+
         <div class="button">
             <button id="startBtn">Start</button>
-            <button id="stopBtn" style="background-color: red;">Stop</button>
+            <button id="stopBtn">Stop</button>
         </div>
     </div>
+
     <script>
         const startBtn = document.getElementById("startBtn");
         const stopBtn = document.getElementById("stopBtn");
         const spinner = document.querySelector(".spiner");
+        const result = document.getElementById("result");
 
-        // Start button → animation start
-        startBtn.addEventListener("click", () => {
+        startBtn.onclick = () => {
             spinner.classList.add("active");
-        });
+            result.textContent = "Spinner is Running...";
+        };
 
-
-        // Stop button → animation stop
-        stopBtn.addEventListener("click", () => {
+        stopBtn.onclick = () => {
             spinner.classList.remove("active");
-        });
-       
+            result.textContent = "Spinner Stopped.";
+        };
     </script>
+
 </body>
 
 </html>
