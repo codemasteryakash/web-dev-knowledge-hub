@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faq Page | by codemasteryakash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #222;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container h1 {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #555;
+        }
+
+        .faqitemList {
+            max-width: 768px;
+        }
+
+        .faqItem h2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            background-color: lightgray;
+        }
+
+        .faqItem h2:hover {
+            background-color: lightslategray;
+        }
+
+        .faqItem span i {
+            color: #555;
+            font-size: large;
+            transition: all 0.3s ease;
+        }
+
+        .faqItem span i:hover {
+            display: block;
+            transform: rotate(180deg);
+        }
+
+        .show {
+            max-height: 200px;
+        }
+
+        /* set bigger than content */
+        .faqItem p {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease;
+            padding: 10px;
+            color: #555;
+            background-color: lightgray;
+            transform: translateY(10);
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faqitemList">
+            <div class="faqItem">
+                <h2>How do pseudo-elements help in hover effects?
+                    <span><i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </h2>
+                <p>They create extra layers for shine, glow, overlays, etc.</p>
+            </div>
+
+            <div class="faqItem">
+                <h2>What is the main purpose of CSS ::before and ::after?
+                    <span><i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </h2>
+                <p>To add extra decorative elements without extra HTML.</p>
+            </div>
+
+            <div class="faqItem">
+                <h2>Why is the content property required for pseudo-elements?
+                    <span><i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </h2>
+                <p>Because pseudo-elements don’t appear unless content exists.</p>
+            </div>
+            <div class="faqItem">
+                <h2>When does absolute positioning follow the parent element?
+                    <span><i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </h2>
+                <p>When the parent has position: relative;.</p>
+            </div>
+            <div class="faqItem">
+                <h2>What is the difference between pseudo-elements and pseudo-classes?
+                    <span><i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </h2>
+                <p>Pseudo-elements add virtual elements; pseudo-classes add states.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll(".faqItem h2").forEach((item) => {
+            item.addEventListener("click", () => {
+                item.nextElementSibling.classList.toggle("show");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

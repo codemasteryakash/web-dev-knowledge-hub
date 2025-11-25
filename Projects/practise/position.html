@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: aqua;
+        }
+
+        .card {
+            height: 200px;
+            width: 200px;
+            box-shadow: 0 0 16px #ddd;
+            border-radius: 16px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .card::before {
+            content: "Hello";
+            position: relative;
+            top: 10px;
+            left: 25px;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+
+        .card:hover::after,
+        ::before {
+            color: red;
+            content: "Bro";
+            position: relative;
+            padding-left: 10px;
+            top: 10px;
+            left: 20px;
+            font-weight: bold;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card"></div>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Practise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: black;
+            color: white;
+            position: sticky;
+            padding: 12px;
+            top: 0;
+            z-index: 9999;
+        }
+
+        header .logo h1 {
+            color: aqua;
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-section {
+            background-color: #7AD7F0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .hero-section h2 {
+            font-size: 4rem;
+            color: blue;
+            margin-top: 150px;
+        }
+
+        .hero-section h4 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            text-align: justify;
+
+        }
+
+        .hero-section button {
+            padding: 12px;
+            margin-top: 60px;
+            width: 25%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            border-radius: 16px;
+            border: 2px solid blue;
+            color: blue;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-section button:hover {
+            background-color: blue;
+            box-shadow: 0 0 16px black;
+            color: white;
+        }
+
+        .projects-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 60px;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            background-color: #1e1f20;
+            color: #7AD7F0;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .projects-section .card {
+            max-width: 400px;
+            height: 350px;
+            background-color: #1e1f20;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 16px;
+            color: #7AD7F0;
+
+        }
+
+        .card img {
+            max-width: 300px;
+            max-height: 250px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 16px #7AD7F0;
+        }
+
+        .card h3 {
+            margin-top: 20px;
+        }
+
+        .card button {
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #1e1f20;
+            border: 2px solid #7AD7F0;
+            color: #7AD7F0;
+            font-weight: bold;
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .contact-form h2 {
+            width: 100%;
+            background-color: #1e1f20;
+            text-align: center;
+            padding: 30px;
+            color: #7AD7F0;
+        }
+
+        form {
+            margin-top: 50px;
+            box-shadow: 0 0 16px black;
+            padding: 30px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-form .userInfo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .userInfo input {
+            padding: 12px 15px;
+            margin-top: 5px;
+            color: #1e1f20;
+            font-size: 1.2rem;
+        }
+
+        .userInfo label {
+            font-size: 1.2rem;
+            color: #1e1f20;
+        }
+
+        textarea {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            height: 150px;
+        }
+
+        form button {
+            padding: 12px;
+            margin-top: 20px;
+            width: 100%;
+            border: none;
+            background-color: #1e1f20;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 16px;
+        }
+        footer {
+            background-color: #1e1f20;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>AKASH</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2>Hi, I'm Akash</h2>
+            <h4>Frontend Web Developer</h4>
+            <p>I'm working in this field i have last 3 years of experiences.</p>
+            <p>I would like to develope imagintion to convert reality.</p>
+            <button>Hire Me</button>
+        </section>
+        <section class="projects-section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjfOZuxIY-9LrJCbMYY3LzWbdj8N1DkJvwrg&s"
+                        alt="wallpaper">
+                    <h3>Desktop wallpaper</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <button>View Wallpaper</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://i.pinimg.com/originals/45/88/f4/4588f4cd1adf2086230321226570f62b.jpg"
+                        alt="Desktop wallpaper 02">
+                    <h3>Window wallpaper</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <button>View Wallpaper</button>
+                </div>
+                <div class="card">
+                    <img src="https://t3.ftcdn.net/jpg/05/71/06/04/360_F_571060419_Owx0HieYkYocICzV4W7IxmXpdmP1xo7F.jpg"
+                        alt="magic wallpaper">
+                    <h3>Magic wallpaper</h3>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <button>View Wallpaper</button>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form">
+            <h2>Contacts</h2>
+            <form action="">
+                <div class="userInfo">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="userInfo">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <textarea name="userText" id="userText" placeholder="Enter your message ..."></textarea>
+                <button>Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h3>Hello World</h3>
+    </footer>
+</body>
+
+</html>
