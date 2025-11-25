@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup | Neon UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0f1f;
+            font-family: 'Segoe UI', sans-serif;
+            color: #dbeafe;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("/blue_moon_sky_white_leaves_trees_birds_anime_background_hd_anime_background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mini-container {
+            width: 90%;
+            max-width: 1400px;
+            height: 85vh;
+            display: flex;
+            overflow: hidden;
+
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 0 30px rgba(0, 140, 255, 0.35);
+        }
+
+        /* LEFT SIDE */
+        .left-side {
+            width: 50%;
+            padding: 60px 50px;
+            background: rgba(0, 0, 0, 0.45);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .left-side h2 {
+            font-size: 3rem;
+            color: #e0f2fe;
+        }
+
+        .left-side p {
+            font-size: 1.2rem;
+            color: #93c5fd;
+            max-width: 80%;
+        }
+
+        /* RIGHT SIDE */
+        .right-side {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(14px);
+        }
+
+        /* FORMS */
+        .form {
+            width: 50%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .userInfo {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .userInfo input {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(200, 230, 255, 0.4);
+            font-size: 1rem;
+            color: #e0faff;
+            outline: none;
+        }
+
+        .userInfo label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: .9rem;
+            color: #bbdefb;
+            padding-left: 10px;
+            transition: .3s;
+        }
+
+        .userInfo input:focus {
+            border-bottom: 2px solid #38bdf8;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        .userInfo input:focus+label,
+        .userInfo input:not(:placeholder-shown)+label {
+            top: -10px;
+            font-size: .8rem;
+            color: #38bdf8;
+            background: #0a0f1f;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .form button {
+            width: 95%;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            border: none;
+            border-radius: 12px;
+            color: #0f172a;
+            cursor: pointer;
+        }
+
+        /* DIVIDER */
+        .divider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .divider .line {
+            width: 2px;
+            height: 80px;
+            background: linear-gradient(to bottom, #38bdf8, transparent, #38bdf8);
+        }
+
+        .divider span {
+            color: #38bdf8;
+            font-size: 1.3rem;
+        }
+
+        /* SOCIAL ICONS */
+        .socialIcons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .socialIcons a {
+            font-size: 1.9rem;
+            color: #bae6fd;
+            transition: .3s;
+        }
+
+        .socialIcons a:hover {
+            color: #38bdf8;
+            transform: scale(1.2);
+        }
+
+        a.switch {
+            color: #38bdf8;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Fade + Slide Animations */
+        .fade-slide-in {
+            animation: fadeSlideIn .5s ease forwards;
+        }
+
+        .fade-slide-out {
+            animation: fadeSlideOut .5s ease forwards;
+        }
+
+        @keyframes fadeSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideOut {
+            0% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+        }
+
+        /* Left Side Fade */
+        .left-fade {
+            animation: leftFade .5s ease;
+        }
+
+        @keyframes leftFade {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="mini-container">
+
+            <!-- LEFT SIDE -->
+            <div class="left-side" id="leftInfo">
+                <h2 id="title">Welcome Back</h2>
+                <p id="desc">
+                    We're happy to see you again!
+                    Log in to continue exploring your personalized dashboard, saved items,
+                    notifications, and all your connected services.
+                </p>
+
+                <ul style="margin-top: 20px; margin-left: 20px; line-height: 1.8; color: #93c5fd; font-size: 1rem;">
+                    <li>✔ Access your saved preferences</li>
+                    <li>✔ Manage your recent activities</li>
+                    <li>✔ Stay updated with instant alerts</li>
+                    <li>✔ Experience a secure & smooth login</li>
+                </ul>
+
+                <p style="margin-top: 25px; color: #bae6fd; font-size: 1rem;">
+                    Need help logging in? We're here 24/7 to assist you!
+                </p>
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+            <div class="right-side">
+
+                <!-- LOGIN FORM -->
+                <div class="form" id="loginForm">
+                    <h2>Login</h2>
+
+                    <div class="userInfo">
+                        <input type="email" placeholder=" " required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="userInfo">
+                        <input type="password" placeholder=" " required>
+                        <label>Password</label>
+                    </div>
+
+                    <button>Login</button>
+
+                    <p>Don't have an account? <a class="switch" onclick="showSignup()">Sign Up</a></p>
+                </div>
+
+                <!-- SIGNUP FORM -->
+                <div class="form hidden" id="signupForm">
+                    <h2>Sign Up</h2>
+
+                    <div class="userInfo">
+                        <input type="text" placeholder=" " required>
+                        <label>Name</label>
+                    </div>
+
+                    <div class="userInfo">
+                        <input type="email" placeholder=" " required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="userInfo">
+                        <input type="password" placeholder=" " required>
+                        <label>Password</label>
+                    </div>
+
+                    <button>Sign Up</button>
+
+                    <p>Already have an account? <a class="switch" onclick="showLogin()">Login</a></p>
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="divider">
+                    <div class="line"></div>
+                    <span>OR</span>
+                    <div class="line"></div>
+                </div>
+
+                <!-- SOCIAL ICONS -->
+                <div class="socialIcons">
+                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-facebook"></i></a>
+                    <a><i class="fa-brands fa-google"></i></a>
+                    <a><i class="fa-brands fa-twitter"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ⭐ SWITCH SYSTEM JS (No content change, only hide/show) -->
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const signupForm = document.getElementById("signupForm");
+        const leftInfo = document.getElementById("leftInfo");
+
+        function showSignup() {
+            // Form animations
+            loginForm.classList.add("fade-slide-out");
+            setTimeout(() => {
+                loginForm.classList.add("hidden");
+                loginForm.classList.remove("fade-slide-out");
+
+                signupForm.classList.remove("hidden");
+                signupForm.classList.add("fade-slide-in");
+            }, 400);
+
+            // Left side update
+            setTimeout(() => {
+                leftInfo.classList.add("left-fade");
+                leftInfo.innerHTML = `
+            <h2>Create Your Account</h2>
+            <p>
+                Join thousands of users who trust our platform.
+                Create your free account and unlock new features,
+                personalized dashboard, and a seamless experience.
+            </p>
+
+            <ul style="margin-top: 20px; margin-left: 20px; line-height: 1.8; color: #93c5fd; font-size: 1rem;">
+                <li>✔ Create & manage your profile</li>
+                <li>✔ Save your preferences</li>
+                <li>✔ Sync data across devices</li>
+                <li>✔ Enjoy premium-like smooth UI</li>
+            </ul>
+
+            <p style="margin-top: 25px; color: #bae6fd; font-size: 1rem;">
+                Need help creating an account? We're here 24/7!
+            </p>
+        `;
+            }, 360);
+
+            setTimeout(() => leftInfo.classList.remove("left-fade"), 800);
+        }
+
+        function showLogin() {
+            signupForm.classList.add("fade-slide-out");
+            setTimeout(() => {
+                signupForm.classList.add("hidden");
+                signupForm.classList.remove("fade-slide-out");
+
+                loginForm.classList.remove("hidden");
+                loginForm.classList.add("fade-slide-in");
+            }, 400);
+
+            setTimeout(() => {
+                leftInfo.classList.add("left-fade");
+                leftInfo.innerHTML = `
+            <h2>Welcome Back</h2>
+            <p>
+                We're happy to see you again!
+                Log in to continue exploring your personalized dashboard,
+                saved items, notifications, and all your connected services.
+            </p>
+
+            <ul style="margin-top: 20px; margin-left: 20px; line-height: 1.8; color: #93c5fd; font-size: 1rem;">
+                <li>✔ Access your saved preferences</li>
+                <li>✔ Manage your recent activities</li>
+                <li>✔ Stay updated with instant alerts</li>
+                <li>✔ Experience a secure & smooth login</li>
+            </ul>
+
+            <p style="margin-top: 25px; color: #bae6fd; font-size: 1rem;">
+                Need help logging in? We're here 24/7 to assist you!
+            </p>
+        `;
+            }, 360);
+
+            setTimeout(() => leftInfo.classList.remove("left-fade"), 800);
+        }
+
+    </script>
+
+</body>
+
+</html>
