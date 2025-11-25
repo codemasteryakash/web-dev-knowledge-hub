@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Scripts Practise</title>
+</head>
+
+<body>
+    <button id="btn">Click me</button>
+    <p id="result"></p>
+    <script>
+        const btn = document.querySelector("#btn");
+        const result = document.querySelector("#result")
+        const number = [1,2,3,4,5];
+        number.push(6); // add element of at the end
+        // shift 
+        // unshift
+        //  pop
+        // splice jo copy karta hei 
+        // slice bhi wise hi karta hei ye sab orignal changes nehi karte 
+        // map // filter // reduce true false and specifec chize find karte hei 
+        // find name se hi pata chal rha hie some() // every // ye sab true false ke sath kuch chize dete hei 
+        result.textContent = number
+        result.style.color = "red"
+
+        function hello() {
+            alert("btn clicked !");
+            result.textContent = "Btn was Clicked !";
+            result.style.color = "red";
+        }
+        btn.addEventListener("click", () => {
+            hello()
+
+        })
+    </script>
+</body>
+
+</html>

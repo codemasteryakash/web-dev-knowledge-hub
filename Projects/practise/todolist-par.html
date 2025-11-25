@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Todo</title>
+</head>
+
+<body>
+    <div class="card">
+        <input type="text" id="text" placeholder="Enter your task" />
+        <button id="saveBtn">Save</button>
+        <p id="msg"></p>
+        <div id="taskContainer"></div>
+    </div>
+
+    <script>
+        const saveBtn = document.querySelector("#saveBtn");
+        const msg = document.querySelector("#msg");
+        const taskContainer = document.querySelector("#taskContainer");
+
+        saveBtn.addEventListener("click", () => {
+            const userTask = document.querySelector("#text").value.trim();
+
+            if (!userTask) {
+                msg.textContent = "⚠️ Please enter your task!";
+                msg.style.color = "red";
+                return;
+            }
+
+            // Create task row
+            const taskDiv = document.createElement("div");
+            const deleteBtn = document.createElement("button");
+
+            taskDiv.textContent = userTask;
+            deleteBtn.textContent = "Delete";
+
+            // Delete functionality
+            deleteBtn.addEventListener("click", () => {
+                taskDiv.remove();
+            });
+
+            taskDiv.appendChild(deleteBtn);
+            taskContainer.appendChild(taskDiv);
+
+            msg.textContent = "✅ Task added!";
+            msg.style.color = "green";
+
+            document.querySelector("#text").value = ""; // clear input
+        });
+    </script>
+</body>
+</html>
